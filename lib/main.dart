@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // create two stack
     var myMenu = Container(
-      width: 128,
+      width: MediaQuery.of(context).size.width/4,
       height: MediaQuery.of(context).size.height,
       decoration: const BoxDecoration(
           color: bikeBgSecondaryColor,
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               // child: Lottie.asset('assets/icons/menu.json',height: 60,width: 60),
               // ignore: prefer_const_constructors
-              child: Icon(Icons.menu_open_sharp,color: Colors.white,size: 50,),
+              child: Icon(Icons.menu_open_sharp,color: Colors.white,size: 45,),
               
               )
         ],
@@ -69,6 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // const SizedBox(height: 100,),
+          SizedBox(height: MediaQuery.of(context).size.height/4,),
           Card(
             elevation: 8.8,
             // shadowColor: bikeBgPrimaryColor,
@@ -80,28 +82,31 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                  children: [
                   const SizedBox(height: 20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                       Row(
-                        children: [
-                          IconButton(onPressed: (){
-
-                          }, icon: const Icon(Icons.star),
-                          color: Colors.yellow.shade700,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 8.0, 15, 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                         Row(
+                          children: [
+                            IconButton(onPressed: (){
+                  
+                            }, icon: const Icon(Icons.star),
+                            color: Colors.yellow.shade700,
+                            iconSize: 30,
+                            ),
+                            const Text("45",style: TextStyle(fontSize: 30,color: Colors.white),)
+                          ],
+                         ),
+                        IconButton(onPressed: (){
+                  
+                        }, icon: const Icon(
+                          Icons.favorite_outline),
+                          color: Colors.white,
                           iconSize: 35,
-                          ),
-                          const Text("45",style: TextStyle(fontSize: 35,color: Colors.white),)
-                        ],
-                       ),
-                      IconButton(onPressed: (){
-
-                      }, icon: const Icon(
-                        Icons.favorite_outline),
-                        color: Colors.white,
-                        iconSize: 35,
-                        )
-                    ],
+                          )
+                      ],
+                    ),
                   ),
 
                   const SizedBox(height: 20,),
@@ -154,16 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
               )
             ),
-            // child: Container(
-            //   height: 400,
-            //   width: 250,
-              
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(20.0),
-            //     color: bikeBgSecondaryColor,
-            //   ),
-
-            //   ),
+           
           ),
           const SizedBox(height: 20,),
           Padding(
