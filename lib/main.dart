@@ -50,12 +50,14 @@ class _MyHomePageState extends State<MyHomePage> {
               topRight: Radius.circular(20), bottomRight: Radius.circular(20))),
       child: Column(
         children: [
-          const SizedBox(height: 20),
+          const SizedBox(height: 40),
           TextButton(
               onPressed: () {
                 Navigator.of(context).pushNamed('/item');
               },
-              child: Lottie.asset('icons/menu.json',height: 60,width: 60),
+              // child: Lottie.asset('assets/icons/menu.json',height: 60,width: 60),
+              // ignore: prefer_const_constructors
+              child: Icon(Icons.menu_open_sharp,color: Colors.white,size: 50,),
               
               )
         ],
@@ -113,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: 350,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage('images/bike2.png'),
+                          image: AssetImage('assets/images/bike2.png'),
                           fit: BoxFit.cover
                           )
                       ),
